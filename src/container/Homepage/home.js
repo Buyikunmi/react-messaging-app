@@ -1,6 +1,7 @@
 import React from 'react';
+import './home.css'
 
-const Dashboard = () => {
+const Home = () => {
     return (
         <div>
             
@@ -8,4 +9,4 @@ const Dashboard = () => {
     );
 }
 
-export default Dashboard;
+export default Home;
