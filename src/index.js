@@ -5,8 +5,10 @@ import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import firebase from "firebase"
+import firebase from "firebase";
 
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAeA3lOXFgD0h-8rwRTV2vX9GCibrFaft8",
@@ -15,19 +17,20 @@ const firebaseConfig = {
   storageBucket: "web-messaging-app-afae2.appspot.com",
   messagingSenderId: "261452166450",
   appId: "1:261452166450:web:25692041108e726e2c532b",
-  measurementId: "G-Y65S54VBRV"
+  measurementId: "G-Y65S54VBRV",
 };
-
 
 firebase.initializeApp(firebaseConfig);
 
+window.store = store;
+
 ReactDOM.render(
   <React.StrictMode>
-    <>
+    <Provider>
       <Router>
         <App />
       </Router>
-    </>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
