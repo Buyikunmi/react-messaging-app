@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout/layout";
-import Card from "../../components/Layout/UI/Card/card";
+import Card from "../../components/UI/Card/card";
 import "./register.css";
+import { signup } from "../../store/Actions/actions";
+import { useDispatch } from "react-redux";
 
 /**
  * @author
@@ -13,12 +15,26 @@ const Register = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
+  const registerUser = (e) => {
+    e.preventDefault();
+
+    const user = {
+      firstName,
+      lastName,
+      email,
+      password,
+    };
+
+    dispatch(signup(user));
+  };
 
   return (
     <Layout>
       <div className="registerDiv">
         <Card>
-          <form>
+          <form onSubmit={registerUser}>
             <h3>Create an Account</h3>
             <input
               name="firstname"

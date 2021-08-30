@@ -21,12 +21,12 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
+ 
 window.store = store;
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider>
+    <Provider store ={store}>
       <Router>
         <App />
       </Router>
