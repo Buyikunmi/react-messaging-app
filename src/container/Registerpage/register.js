@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import Layout from "../../components/Layout/layout";
 import Card from "../../components/UI/Card/card";
 import "./register.css";
-import { signup } from "../../store/Actions/actions";
 import { useDispatch } from "react-redux";
+import { signup } from "../../actions/actions";
 
 /**
  * @author
  * @function Register
  **/
 
-const Register = () => {
+const Register = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
